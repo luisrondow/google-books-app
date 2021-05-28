@@ -18,6 +18,7 @@ const DiscoverNewBookCard = (props: Props) => {
   return (
     <Flex
       onClick={() => history.push(`/book/${id}`)}
+      cursor="pointer"
       px="6"
       py="3"
       w="272px"

@@ -1,16 +1,18 @@
+import { useMediaQuery } from "@chakra-ui/media-query";
 import { CarouselProvider, Slider, Slide } from "pure-react-carousel";
 import DiscoverNewBookCard from "./Card";
 import { books } from "./mock";
 
 const DiscoverNewBook = () => {
   const colors = ["#00173D", "#451475"];
+  const [isMobile] = useMediaQuery("(max-width: 425px)");
 
   return (
     <CarouselProvider
       naturalSlideWidth={180}
       naturalSlideHeight={95}
-      visibleSlides={1.25}
-      totalSlides={2}
+      visibleSlides={isMobile ? 1.25 : 5}
+      totalSlides={isMobile ? 2 : 5}
     >
       <Slider>
         {books.map((book, index) => (
